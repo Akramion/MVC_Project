@@ -1,6 +1,7 @@
 <?php 
 
 namespace application\core;
+use application\core\View;
 
 class Router {
 
@@ -49,17 +50,17 @@ class Router {
 				}
 
 				else {
-					echo "Метод не найден $action";
+					View::errorCode(404);
 				}
 			}
 
 			else {
-				echo "Не найден класс $path ";
+				View::errorCode(404);
 			}
 		}
 
 		else {
-			echo "Не найден";
+			View::errorCode(404);
 		}
 	}
 
